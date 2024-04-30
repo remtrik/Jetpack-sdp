@@ -9,7 +9,10 @@ Then you can use it like this for example:
 
 modifier = Modifier.size(50.sdp())
 
+And like this for texts:
+
+fontSize = 30.ssp()
+
 ## Things to note:
-* Currently it doesnt support scaling up Text's 
 * Like the original sdp it uses approximation in the math operations to improve performance (Although I dont think it speeds up anything with my bad implementation lol)
 

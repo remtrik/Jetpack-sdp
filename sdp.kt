@@ -1,11 +1,11 @@
 package com.gixousiyq.sdp
 
-import android.content.res.Configuration
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 object SdpScreenDimensionValues {
     var smallestWidth : Int = 0
@@ -34,7 +34,16 @@ fun Int.sdp(): Dp {
         AssValsToTheSdpObject()
     }
     val ratio = (ApproximateWidth(SdpScreenDimensionValues.smallestWidth))/300.0
-    Log.println(Log.ERROR,"Main", ratio.toString())
     val final = this*ratio
     return final.dp
+}
+
+@Composable
+fun Int.ssp(): TextUnit {
+    if (SdpScreenDimensionValues.smallestWidth == 0) {
+        AssValsToTheSdpObject()
+    }
+    val ratio = (ApproximateWidth(SdpScreenDimensionValues.smallestWidth))/300.0
+    val final = this*ratio
+    return final.sp
 }
